@@ -1,0 +1,12 @@
+<ion-content>
+    <div style="background-color: white; height: 100%;">
+        <!-- this creates a google map on the page with the given lat/lng from -->
+        <!-- the component as the initial center of the map: -->
+        <agm-map (mapClick)="setMarker($event)" [latitude]="lat" [longitude]="lng" [zoom]='16' [usePanning]="true">
+            <agm-marker [latitude]="lat" [longitude]="lng" width="50%">
+
+            </agm-marker>
+
+        </agm-map>
+    </div>
+</ion-content>

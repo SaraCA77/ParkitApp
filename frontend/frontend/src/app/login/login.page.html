@@ -1,0 +1,27 @@
+<ion-content>
+    <br>
+    <ion-img src="assets/logop.PNG"></ion-img>
+    <br>
+    <!-- (ngSubmit)="login(forma)" #forma="ngForm"-->
+    <form (ngSubmit)="LoginV(forma)" #forma="ngForm">
+        <p>Inicio de sesión</p>
+        <br>
+        <ion-input class="input" type="text" required [(ngModel)]="usuario" name="usuario" placeholder="Usuario" maxLength="200" minLength="3"></ion-input>
+        <br>
+        <ion-input type="password" class="input" required [(ngModel)]="clave" name="clave" placeholder="Clave" maxLength="200" minLength="3"></ion-input>
+        <ion-toolbar class="loginInput02">
+            <ion-checkbox class="check"></ion-checkbox>
+            <ion-label class="recordar">
+                Recordar Usuario
+            </ion-label>
+        </ion-toolbar>
+        <ion-button class="button" type="submit" [disabled]="!forma.valid">Ingresar</ion-button>
+        <br> <br> <br> <br>
+        <a href="">Si aún no tienes usuario, regisrate aquí</a>
+        <ion-toolbar>
+            <ion-img class="ifacebook" slot="start" src="assets/facebooko.png"></ion-img>
+            <ion-img class="igoogle" src="assets/google-plus.png"></ion-img>
+            <ion-img class="ilinkedin" slot="end" src="assets/linkedin.png"></ion-img>
+        </ion-toolbar>
+    </form>
+</ion-content>

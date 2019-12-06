@@ -1,0 +1,67 @@
+<ion-content>
+    <form>
+        <br> <br>
+        <div class="div">
+            <ion-img class="ipark" src="assets/acceso.png"></ion-img>
+            Registro de <br> Parqueadero
+        </div>
+        <br>
+        <div class="labelt">
+            Antes de registrar tu parqueadero conoce los <br>
+            <ion-img onclick="openLocalPdf()" class="ipdf" src="assets/pdf.png"></ion-img> términos y condiciones para que sea <br> aprobado ya mismo.
+        </div>
+        <br>
+        <ion-input class="input" type="text" required name="nombre_parqueadero" placeholder="Nombre Parqueadero" maxLength="200" minLength="3"></ion-input>
+        <br>
+        <ion-input class="input" type="text" required name="direccion" placeholder="Dirección" maxLength="200" minLength="3"></ion-input>
+        <br>
+        <ion-select name="horario " placeholder="Selecciona una opción ">
+            <ion-select-option value="Lunes a Viernes">Lunes a Viernes</ion-select-option>
+            <ion-select-option value="Lunes a Domingo Incluyendo Festivos">Lunes a Domingo Incluyendo Festivos</ion-select-option>
+            <ion-select-option value="Lunes a Domingo (No Festivos)">Lunes a Domingo (No Festivos)</ion-select-option>
+            <ion-select-option value="Fines de Semana">Fines de Semana</ion-select-option>
+        </ion-select>
+        <br>
+        <ion-item>
+            <ion-datetime placeholder="Abre" displayFormat="h:mm A"></ion-datetime>
+        </ion-item>
+        <br>
+        <ion-item>
+            <ion-datetime placeholder="Cierra" displayFormat="h:mm A"></ion-datetime>
+        </ion-item>
+        <br>
+        <ion-input class="input" type="text" required name="represante_legal" placeholder="Represante Legal" maxLength="200" minLength="3"></ion-input>
+        <br>
+        <ion-select name="tipo_documento" placeholder="Tipo Documento">
+            <ion-select-option value="CC">Cédula ciudadania</ion-select-option>
+            <ion-select-option value="CE">Cédula Extranjeria</ion-select-option>
+            <ion-select-option value="TI">Tarjeta Identidad</ion-select-option>
+            <ion-select-option value="P">Pasaporte</ion-select-option>
+        </ion-select>
+        <br>
+        <ion-input class="input" type="text" required name="numero_documento" placeholder="Numero Documento" maxLength="15" minLength="9"></ion-input>
+        <br>
+        <ion-input class="input" type="text" required name="cupo_total" placeholder="Cupo Total" maxLength="3" minLength="1"></ion-input>
+        <br>
+        <ion-input class="input" type="text" required name="cupo_vehiculos" placeholder="Cupo Vehículos" maxLength="3" minLength="1"></ion-input>
+        <br>
+        <ion-input class="input" type="text" required name="cupo_motos" placeholder="Cupo Motos" maxLength="3" minLength="1"></ion-input>
+        <br>
+        <ion-input class="input" type="text" required name="cupo_bicicletas" placeholder="Cupo Bicicletas" maxLength="3" minLength="1"></ion-input>
+        <br>
+        <ion-button class="buttond" type="submit">Subir Documentos °°°</ion-button>
+        <br>
+        <ion-button class="buttonf" type="submit">Foto °°°</ion-button>
+        <br><br>
+        <ion-toolbar class="terminos">
+            <ion-checkbox class="check"></ion-checkbox>
+            <ion-label class="termcond">
+                Confirmo que he leído y estoy de acuerdo <br> con los términos y condiciones
+            </ion-label>
+        </ion-toolbar>
+        <br>
+        <ion-button class="buttonr" type="submit">Registar</ion-button>
+        <br>
+        <ion-img class="ivolver" src="assets/volver.png"></ion-img>
+    </form>
+</ion-content>

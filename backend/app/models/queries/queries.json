@@ -1,0 +1,55 @@
+{
+    "read_all_usuarios": "SELECT * FROM `usuarios`",
+    "read_usuarios": "SELECT * FROM `usuarios` where no_documento=:no_documento",
+    "create_usuarios": "INSER INTO `usuarios` (nombre,apellidos,tipo_documento,no_documento,correo,clave,rol,estado) values (:nombre,:apellidos,:tipo_documento,:no_documento,:correo,:clave,:rol,:estado)",
+    "update_usuarios": "UPDATE `usuarios` set nombre=:nombre, apellidos=:apellidos, tipo_documento=:tipo_documento,no_documento=:no_documento,correo=:correo,clave=:clave,rol=:rol,estado=:estado where no_documento=:no_documento",
+
+    "read_all_administradores": "SELECT * FROM  `administradores`",
+    "read_administradores": "SELECT * `administradores` where no_documento=:no_documento",
+    "create_administradores": "INSERT INTO `administradores` (nombres,apellidos,tipo_documento,no_documento,correo,clave,rol,estado) values (:nombres,:apellidos,:tipo_documento,:no_documento,:correo,:clave,:rol,:estado)",
+    "update_administradores": "UPDATE `usuarios` set nombre=:nombre, apellidos=:apellidos, tipo_documento=:tipo_documento,no_documento=:no_documento,correo=:correo,clave=:clave,rol=:rol,estado=:estado where no_documento=:no_documento",
+
+    "read_all_parqueaderos": "SELECT * FROM `parqueaderos`",
+    "read_parqueaderos": "SELECT * FROM `parqueaderos` WHERE id=:id",
+    "create_parqueaderos": "INSER INTO `parqueaderos` (nombre_parqueadero,direccion,cupo_total,cupo_bicicletas,cupo_vehiculos,cupo_motos,representante_legal,tipo_documento,no_documento,correo,clave,documentos,aprobado,observaciones,rol,foto,horario,abre,cierra,estado) values (:nombre_parqueadero,:direccion,:cupo_total,:cupo_bicicletas,:cupo_vehiculos,:cupo_motos,:representante_legal,:tipo_documento,:no_documento,:correo,:clave,:documentos,:aprobado,:observaciones,:rol,:foto,:horario,:abre,:cierra,:estado) ",
+    "update_parqueaderos": "UPDATE `parqueaderos` SET nombre_parqueadero=:nombre_parqueadero,direccion=:direccion,cupo_total=:cupo_total,cupo_bicicletas=:cupo_bicicletas,cupo_vehiculos=:cupo_vehiculos,cupo_motos=:cupo_motos,representante_legal=:representante_legal,tipo_documento=:tipo_documento,no_documento=:no_documento,correo=:correo,clave=:clave,documentos=:documentos,aprobado=:aprobado,observaciones=:observaciones,rol=:rol,foto=:foto,horario=:horario,abre=:abre,cierra=:cierra,estado=:estado",
+
+    "read_all_vehiculos": "SELECT * FROM `vehiculos` ",
+    "read_vehiculos": "SELECT * FROM `vehiculos` where id=:id and usuario=:usuario",
+    "create_vehiculos": "INSERT INTO `vehiculos` (tipo_vehiculo,placa,color,puertas,marca,modelo,usuario) values (:tipo_vehiculo,:placa,:color,:puertas,:marca,:modelo,:usuario)",
+    "update_vehiculos": "UPDATE `vehiculos` SET tipo_vehiculo=:tipo_vehiculo,placa=:placa,color=:color,puertas=:puertas,merca=:marca,modelo=:modelo,usuario=:usuario) values (tipo_vehiculo=:tipo_vehiculo,plaxa=:placa,color=:color,puertas=:puertas,marca=:marca,modelo=:modelo,usuario=:usuario",
+
+    "read_all_reservas": "SELECT * FROM `reservas` where parqueadero=:parqueadero",
+    "read_reservas": "SELECT * FROM `reservas` where id=:id and usuario=:usuario ",
+    "create_reservas": "INSERT INTO `reservas` (numero_reserva,ubicacion,fecha,hora,estado,fecha_reserva,usuario,parqueadero,vehiculo) values (numero_reserva=:numero_reserva,ubicacion=:ubicacion,fecha=:fecha,hora=:hora,estado=:estado,fecha_reserva=:fecha_reserva,usuario=:usuario,parqueadero=:parqueadero,vehiculo=:vehiculo) ",
+    "update_reservas": "UPDATE `reservas` SET numero_reserva=:numero_reserva,ubicacion=:ubicacion,fecha=:fecha,hora=:hora,estado=:estado,fecha_reserva=:fecha_reserva,usuario=:usuario,parqueadero=:parqueadero,vehiculo=:vehiculo) ",
+
+    "read_all_servicios": "SELECT * FROM `servicios` where parqueadero=:parqueadero ",
+    "read_servicios": "SELECT * FROM `servicios` where usuario=:usuario and parqueadero=:parqueadero and vehiculo=:vehiculo",
+    "create_servicios": "INSERT INTO `servicios` (fecha_ingreso,hora_ingreso,ubicacion,fecha_salida,hora_salida,tiempo_total,valor,iva,valor_total,medio_pago,parqueadero,usuario,vehiculo) values (fecha_ingreso=:fecha_ingreso,hora_ingreso=:hora_ingreso,ubicacion=:ubicacion,fecha_salida=:fecha_salida,hora_salida=:hora_salida,tiempo_total=:tiempo_total,valor=:valor,iva=:iva,valor_total=:valor_total,medio_pago=:medio_pago,parqueadero=:parqueadero,usuario=:usuario,vehiculo=:vehiculo)",
+    "update_servicios": "UPDATE `servicios` SET fecha_ingreso=:fecha_ingreso,hora_ingreso=:hora_ingreso,ubicacion=:ubicacion,fecha_salida=:fecha_salida,hora_salida=:hora_salida,tiempo_total=:tiempo_total,valor=:valor,iva=:iva,valor_total=:valor_total,medio_pago=:medio_pago,parqueadero=:parqueadero,usuario=:usuario,vehiculo=:vehiculo ",
+
+    "read_all_calificacion": "SELECT * FROM `calificacion` where parqueadero=:parqueadero ",
+    "read_calificacion": "SELECT * FROM `calificacion` where parqueadero=:parqueadero and usuario=:usuario ",
+    "create_calificacion": "INSERT INTO `calificacion` (calificacion,observaciones,fecha_hora,servicio,usuario,parqueadero) values (calificacion=:calificacion,observaciones=:observaciones,fecha_hora=:fecha_hora,servicio=:servicio,usuario=:usuario,parqueadero=:parqueadero)",
+    "update_calificacion": "UPDATE `calificacion` SET calificacion=:calificacion,observaciones=:observaciones,fecha_hora=:fecha_hora,servicio=:servicio,usuario=:usuario,parqueadero=:parqueadero",
+
+    "read_all_novedades": "SELECT * FROM `novedades` where parqueadero=:parqueadero",
+    "read_novedades": "SELECT * FROM `novedades` where usuario=:usuario and parqueadero=:parqueadero",
+    "create_novedades": "INSERT INTO `novedades` (novedad,fecha_hora,estado,usuario,parqueadero) values (novedad=:novedad,fecha_hora=:fecha_hora,estado=:estado,usuario=:usuario,parqueadero=:parqueadero)",
+    "update_novedades": "UPDATE `novedades` SET novedad=:novedad,fecha_hora=:fecha_hora,estado=:estado,usuario=:usuario,parqueadero=:parqueadero",
+
+    "read_all_codigos_promo": "SELECT * FROM `codigos_promocionales`",
+    "read_codigos_promo": "SELECT * FROM `codigos_promocionales` where id=:id",
+    "create_codigos_promo": "INSERT INTO `codigos_promocionales` (codigo,fecha_hora_ingreso,fecha_hora_inicio,fecha_hora_fin,tiempo_activo,observaciones,administrador) values (codigo=:codigo,fecha_hora_ingreso=:fecha_hora_ingreso,fecha_hora_inicio=:fecha_hora_inicio,fecha_hora_fin=:fecha_hora_fin,tiempo_activo=:tiempo_activo,observaciones=:observaciones,administrador=:administrador)",
+    "update_codigos_promo": "UPDATE `codigos_promocionales` SET codigo=:codigo,fecha_hora_ingreso=:fecha_hora_ingreso,fecha_hora_inicio=:fecha_hora_inicio,fecha_hora_fin=:fecha_hora_fin,tiempo_activo=:tiempo_activo,observaciones=:observaciones,administrador=:administrador",
+
+    "read_all_codigos_users": "SELECT * FROM `codigos_usuarios`",
+    "read_codigos_users": "SELECT * FROM `codigos_usuarios` where id=:id and usuario=:usuario",
+    "create_codigos_users": "INSERT INTO `codigos_usuarios` (usuario,codigo_promocional,fecha_hora_uso,fecha_hora_activacion,servicio) values (usuario=:usuario,codigo_promocional=:codigo_promocional,fecha_hora_uso=:fecha_hora_uso,fecha_hora_activacion=:fecha_hora_activacion,servicio=:servicio)",
+    "update_codigos_users": "UPDATE `codigos_usuarios` SET usuario=:usuario,codigo_promocional=:codigo_promocional,fecha_hora_uso=:fecha_hora_uso,fecha_hora_activacion=:fecha_hora_activacion,servicio=:servicio",
+
+    "read_tarifas": "SELECT * FROM `tarifas` where parqueadero=:parqueadero",
+    "create_tarifas": "INSERT INTO `tarifas`  (valor_minuto_v,valor_minuto_m,valor_minuto_b,valor_dia_v,valor_dia_m,valor_dia_b,parqueadero) values (valor_minuto_v=:valor_minuto_v,valor_minuto_m=:valor_minuto_m,valor_minuto_b=:valor_minuto_b,valor_dia_v=:valor_dia_v,valor_dia_m=:valor_dia_m,valor_dia_b=:valor_dia_b,parqueadero=:parqueadero)",
+    "update_tarifas": "UPDATE `tarifas` SET valor_minuto_v=:valor_minuto_v,valor_minuto_m=:valor_minuto_m,valor_minuto_b=:valor_minuto_b,valor_dia_v=:valor_dia_v,valor_dia_m=:valor_dia_m,valor_dia_b=:valor_dia_b,parqueadero=:parqueadero"
+}
