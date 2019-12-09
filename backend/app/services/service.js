@@ -53,7 +53,6 @@ class Service {
             }
         });
     }
-
     update(id, data) {
         return new Promise((resolve, reject) => {
             try {

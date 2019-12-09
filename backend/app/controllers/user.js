@@ -3,18 +3,27 @@
  * @author jaimecastrillon@gmail.com
  */
 
+
 const Controller = require('./controller');
 const Service = require('../services/user');
 
 class UserController extends Controller {
 
-    constructor(){
+    constructor() {
         super(Service);
     }
 
     async login(user, access) {
         try {
             return await this.service.login(user, access);
+        } catch (error) {
+            return await Promise.reject(error);
+        }
+    }
+
+    async password(user, current, access) {
+        try {
+            return await this.service.password(user, current, access);
         } catch (error) {
             return await Promise.reject(error);
         }
