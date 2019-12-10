@@ -43,11 +43,11 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios', {
             },
         }
     },
-    tipoDocumento: {
+    tipo_documento: {
         type: DataTypes.STRING(30),
-        allowNull: true,
+        allowNull: false,
     },
-    noDocumento: {
+    no_documento: {
         type: DataTypes.STRING(30),
         allowNull: false,
         validate: {

@@ -1,13 +1,13 @@
-<ion-content>
-    <ion-toolbar>
+<ion-content fullscreen>
+    <ion-toolbar slot="fixed">
         <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
     </ion-toolbar>
-    <span class="menu" color="none"></span>
-    <div style="background-color: transparent; height: 100%;">
+    <div style="background-color: white; height: 100%;">
         <!-- this creates a google map on the page with the given lat/lng from -->
         <!-- the component as the initial center of the map: -->
+
         <agm-map (mapClick)="setMarker($event)" [latitude]="lat" [longitude]="lng" [zoom]='16' [usePanning]="true">
             <agm-marker [latitude]="lat" [longitude]="lng" width="50%">
 

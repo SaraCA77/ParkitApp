@@ -1,0 +1,8 @@
+[2019-12-09T20:39:54.304] [ERROR] trappsporte - [action: validation][msg: N.documento es requerido][line:18:C:\Users\Usuario\Documents\AppParkit\parkit\backend\app\utils\validator.js]
+[2019-12-09T20:40:53.801] [ERROR] trappsporte - [action: validation][msg: N.documento es requerido][line:18:C:\Users\Usuario\Documents\AppParkit\parkit\backend\app\utils\validator.js]
+[2019-12-09T20:41:32.982] [ERROR] trappsporte - [action: validation][msg: usuarios.tipoDocumento cannot be null, N.documento es requerido][line:18:C:\Users\Usuario\Documents\AppParkit\parkit\backend\app\utils\validator.js]
+[2019-12-09T20:43:21.745] [ERROR] trappsporte - [action: create][msg: null][line:47:C:\Users\Usuario\Documents\AppParkit\parkit\backend\app\services\service.js]
+[2019-12-09T20:43:53.353] [ERROR] trappsporte - [action: create][msg: null][line:47:C:\Users\Usuario\Documents\AppParkit\parkit\backend\app\services\service.js]
+[2019-12-09T20:44:59.553] [ERROR] trappsporte - [action: create][msg: null][line:47:C:\Users\Usuario\Documents\AppParkit\parkit\backend\app\services\service.js]
+[2019-12-09T20:50:13.756] [ERROR] trappsporte - [action: create][msg: null][line:47:C:\Users\Usuario\Documents\AppParkit\parkit\backend\app\services\service.js]
+[2019-12-09T20:56:38.123] [ERROR] trappsporte - [action: create][msg: null][line:47:C:\Users\Usuario\Documents\AppParkit\parkit\backend\app\services\service.js]
