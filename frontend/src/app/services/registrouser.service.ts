@@ -19,7 +19,8 @@ export class RegistrouserService {
     return this.http.get(this.urlRegistroUser);
   }
 
-  setRegistroUser(data: any) {
+  setRegistroUser(data) {
+    console.log(data);
     return this.http.post(this.urlRegistroUser, data);
   }
 

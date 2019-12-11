@@ -10,14 +10,14 @@
         <br>
         <ion-input type="text" class="input" required [(ngModel)]="apellidos" name="apellidos" placeholder="Apellido(s)" maxLength="200" minLength="1"></ion-input>
         <br>
-        <ion-select name="tipoDocumento" [(ngModel)]="tipoDocumento" placeholder="Tipo Documento">
+        <ion-select name="tipo_documento" [(ngModel)]="tipo_documento" placeholder="Tipo Documento">
             <ion-select-option value="CC">Cédula ciudadania</ion-select-option>
             <ion-select-option value="CE">Cédula Extranjeria</ion-select-option>
             <ion-select-option value="TI">Tarjeta Identidad</ion-select-option>
             <ion-select-option value="P">Pasaporte</ion-select-option>
         </ion-select>
         <br>
-        <ion-input type="text" class="input" required [(ngModel)]="noDocumento" name="noDocumento" placeholder="No. Documento" maxLength="200" minLength="3"></ion-input>
+        <ion-input type="text" class="input" required [(ngModel)]="no_documento" name="no_documento" placeholder="No. Documento" maxLength="200" minLength="3"></ion-input>
         <br>
         <ion-input type="text" class="input" required [(ngModel)]="celular" name="celular" placeholder="Celular" maxLength="200" minLength="3"></ion-input>
         <br>
@@ -25,9 +25,9 @@
         <br>
         <ion-input type="password" class="input" [(ngModel)]="clave" name="clave" placeholder="Contraseña" maxLength="200" minLength="3"></ion-input>
         <br>
-        <ion-input type="text" class="input" hidden [(ngModel)]="rol" name="rol" value="U" maxLength="200" minLength="3"></ion-input>
+        <ion-input class="input" hidden [(ngModel)]="rol" name="rol" value="U" maxLength="200" minLength="3"></ion-input>
         <br>
-        <ion-input type="text" class="input" hidden [(ngModel)]="estado" name="estado" value="ACTIVO" maxLength="200" minLength="3"></ion-input>
+        <ion-input class="input" hidden [(ngModel)]="estado" name="estado" value="ACTIVO" maxLength="200" minLength="3"></ion-input>
         <br>
         <ion-button class="button" type="submit" expand="" [disabled]="!forma.valid" size="block">Registarme</ion-button>
         <br>

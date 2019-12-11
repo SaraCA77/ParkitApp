@@ -9,26 +9,26 @@ import { RegistrouserService } from '../services/registrouser.service';
 export class RegistrouserPage implements OnInit {
 
   constructor(private service: RegistrouserService) { }
-  
+
   public nombre: any;
   public apellidos: any;
-  public tipoDocumento: any;
-  public noDocumento: any;
+  public tipo_documento: any;
+  public no_documento: any;
   public celular: any;
   public correo: any;
   public clave: any;
-  public rol: any;
-  public estado: any;
+  public rol = "U";
+  public estado = "ACTIVO";
 
   ngOnInit() {
   }
-  
+
   guardarRegistro() {
     const data = {
       nombre: this.nombre,
       apellidos: this.apellidos,
-      tipoDocumento: this.tipoDocumento,
-      noDocumento: this.noDocumento,
+      tipo_documento: this.tipo_documento,
+      no_documento: this.no_documento,
       celular: this.celular,
       correo: this.correo,
       clave: this.clave,
@@ -38,6 +38,6 @@ export class RegistrouserPage implements OnInit {
     this.service.setRegistroUser(data).subscribe(Response => {
       console.log(Response);
     })
-  
-    }
+
+  }
 }

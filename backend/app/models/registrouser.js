@@ -138,22 +138,6 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios', {
         allowNull: true,
     }
 }, {
-    underscored: true,
     timestamps: false,
     freezeTableName: true,
-    defaultScope: {
-        attributes: { exclude: ['access'] },
-    },
-    scopes: {
-        withPassword: {
-            attributes: { include: ['access'], exclude: ['createdAt', 'updatedAt', 'token'] },
-        }
-    },
-    hooks: {
-        beforeCreate: (user, options) => {
-            return Hash.createHash(user.access).then(encrypted => {
-                user.access = encrypted;
-            });
-        }
-    }
 });
