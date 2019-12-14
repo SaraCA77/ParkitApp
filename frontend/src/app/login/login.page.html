@@ -15,9 +15,9 @@
                 Recordar Usuario
             </ion-label>
         </ion-toolbar>
-        <ion-button class="button" type="submit" [disabled]="!forma.valid">Ingresar</ion-button>
+        <ion-button class="button" type="submit" [disabled]="!forma.valid" routerLink="/home">Ingresar</ion-button>
         <br> <br> <br> <br>
-        <a href="">Si aún no tienes usuario, regisrate aquí</a>
+        <a routerLink="/registrouser">Si aún no tienes usuario, regisrate aquí</a>
         <ion-toolbar>
             <ion-img class="ifacebook" slot="start" src="assets/facebooko.png"></ion-img>
             <ion-img class="igoogle" src="assets/google-plus.png"></ion-img>
