@@ -24,6 +24,9 @@ module.exports = (controller => {
         login(req, res) {
             const user = req.body.username || '';
             const access = req.body.password || '';
+
+            console.log("En routing!! User: " + user + "|| Pass" + access);
+
             ctrl.login(user, access)
                 .then(success => {
                     const token = Token.createToken(success.data);

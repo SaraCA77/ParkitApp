@@ -50,6 +50,11 @@ export class AppComponent {
       title: 'Terminos y Condiciones',
       url: '/terminosycondiciones',
       icon: 'ios-create'
+    },
+    {
+      title: 'Cerrar Sesión',
+      url: '',
+      icon: 'ios-power'
     }
   ];
   constructor(

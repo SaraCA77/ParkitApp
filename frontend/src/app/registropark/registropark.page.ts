@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registropark',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroparkPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public toastController: ToastController) { }
 
   ngOnInit() {
   }

@@ -1,5 +1,5 @@
 /**
- * Servicio que implementa la funcionalidad del modelo User
+ * Servicio que implementa la funcionalidad del modelo usuarios
  * @author jaimecastrillon@gmail.com
  */
 
@@ -16,42 +16,44 @@ const Response = require('../routing/response');
 const Messages = require('../utils/messages');
 const Logger = require('../utils/logger')();
 
-class UserService extends Service {
+class usuariosService extends Service {
 
     constructor() {
         const modelOptions = {
             create: {
-                attributes: ["id", "usuarios", "clave", "rol", "estado"]
+                attributes: ["usuarios", "clave"]
             },
             one: {
-                attributes: ["id", "usuarios", "clave", "rol", "estado"]
+                attributes: ["usuarios", "clave"]
             },
             all: {
-                attributes: ["id", "usuarios", "clave", "rol", "estado"]
+                attributes: ["usuarios", "clave"]
             },
         };
+        console.log(modelOptions, "Model: ", Model);
+
         super(Model, modelOptions);
     }
 
-    async login(usuario, clave) {
+    async login(usuarios, clave) {
         try {
-            const user = await this.model.scope('withPassword').findOne({
+            const usuarios = await this.model.scope('withPassword').findOne({
                 where: {
                     [Op.or]: [{ usuario: usuarios }, { clave: clave }]
                 }
             });
 
-            if (user && access) {
-                if (user.active) {
-                    const isValid = await Hash.validateHash(clave, user.clave);
+            if (usuarios && clave) {
+                if (usuarios.active) {
+                    const isValid = await Hash.validateHash(clave, usuarios.clave);
                     if (isValid) {
-                        const userData = {
-                            usuario: user.usuarios,
-                            clave: user.clave,
-                            rol: user.rol,
-                            estado: user.estado
+                        const usuariosData = {
+                            usuario: usuarios.usuarios,
+                            clave: usuarios.clave,
+                            rol: usuarios.rol,
+                            estado: usuarios.estado
                         };
-                        return Response.success(userData);
+                        return Response.success(usuariosData);
                     } else {
                         await Promise.reject(Response.error(Messages('LOGIN_NOT_EXIST'), 404));
                     }
@@ -70,4 +72,4 @@ class UserService extends Service {
 
 }
 
-module.exports = UserService;
+module.exports = usuariosService;

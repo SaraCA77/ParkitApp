@@ -11,7 +11,9 @@ export class LoginService {
 
   constructor(public http: HttpClient) { }
 
-  getUserId(data: any) {
-    return this.http.get(`${this.urlUser}/${data}`);
+  getUserId(data) {
+    console.log("DAta Login: "+ JSON.stringify(data));    
+    return this.http.get(`${this.urlUser}/${JSON.stringify(data)}`);
+    // ${data}
   }
 }

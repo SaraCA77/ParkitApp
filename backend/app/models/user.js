@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios_app', {
             }
         }
     },
-    access: {
+    clave: {
         type: DataTypes.STRING(100),
         allowNull: false,
         validate: {
@@ -39,31 +39,15 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios_app', {
             },
         }
     },
-    rol: {
-        type: DataTypes.STRING(2),
-        allowNull: true,
-    },
-    estado: {
-        type: DataTypes.STRING(10),
-        allowNull: true,
-    },
+    // rol: {
+    //     type: DataTypes.STRING(2),
+    //     allowNull: true,
+    // },
+    // estado: {
+    //     type: DataTypes.STRING(10),
+    //     allowNull: true,
+    // },
 }, {
-    underscored: true,
     timestamps: false,
     freezeTableName: true,
-    defaultScope: {
-        attributes: { exclude: ['access'] },
-    },
-    scopes: {
-        withPassword: {
-            attributes: { include: ['access'], exclude: ['createdAt', 'updatedAt', 'token'] },
-        }
-    },
-    hooks: {
-        beforeCreate: (user, options) => {
-            return Hash.createHash(user.access).then(encrypted => {
-                user.access = encrypted;
-            });
-        }
-    }
 });

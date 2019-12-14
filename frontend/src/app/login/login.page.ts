@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
       usuario: this.usuario,
       clave: this.clave
     }
-    this.service.getUserId(data.usuario).subscribe(Response => {
+    this.service.getUserId(data).subscribe(Response => {
       console.log(Response);
     })
   }

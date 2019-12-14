@@ -35,15 +35,16 @@ CREATE TABLE IF NOT EXISTS `parkit`.`parqueaderos` (
   `no_documento` VARCHAR(15) NOT NULL,
   `correo` VARCHAR(100) NOT NULL,
   `clave` VARCHAR(50) NOT NULL,
-  `documentos` LONGTEXT NOT NULL,
-  `aprobado` TINYINT NOT NULL,
+  `documentos` LONGTEXT NULL,
+  `aprobado` TINYINT NULL,
   `observaciones` LONGTEXT NULL,
   `rol` VARCHAR(3) NOT NULL,
-  `foto` LONGTEXT NOT NULL,
+  `foto` LONGTEXT NULL,
   `horario` VARCHAR(100) NOT NULL,
   `abre` TIME NOT NULL,
   `cierra` TIME NOT NULL,
   `estado` VARCHAR(30) NOT NULL,
+  `terminos` tinyint(1) NOT NULL DEFAULT '1'
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 

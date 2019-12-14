@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'registrouser', loadChildren: './registrouser/registrouser.module#RegistrouserPageModule' },
   { path: 'registropark', loadChildren: './registropark/registropark.module#RegistroparkPageModule' },
   { path: 'adminhome', loadChildren: './adminhome/adminhome.module#AdminhomePageModule' },
+  { path: 'homeadmin', loadChildren: './homeadmin/homeadmin.module#HomeadminPageModule' },
 ];
 
 @NgModule({

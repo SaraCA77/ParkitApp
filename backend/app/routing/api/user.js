@@ -8,14 +8,14 @@ const router = express.Router();
 const Controller = require('../../controllers/user');
 const Routing = require('../routing');
 const routing = Routing(new Controller());
-const Auth = require('../../middlewares/auth');
+// const Auth = require('../../middlewares/auth');
 
 router
-    .get('/users', Auth.isAuth, routing.all)
-    .get('/users/:id', Auth.isAuth, routing.one)
-    .post('/users', Auth.isAuth, routing.create)
-    .post('/users/login', routing.login)
-    .put('/users/:id', Auth.isAuth, routing.update)
-    .delete('/users/:id', Auth.isAuth, routing.destroy);
+    .get('/user', routing.login)
+    .get('/user/:id', routing.one)
+    .post('/user', routing.create)
+    .post('/user/login', routing.login)
+    .put('/user/:id', routing.update)
+    .delete('/user/:id', routing.destroy);
 
 module.exports = router;

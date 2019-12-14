@@ -21,13 +21,6 @@ class UserController extends Controller {
         }
     }
 
-    async password(user, current, access) {
-        try {
-            return await this.service.password(user, current, access);
-        } catch (error) {
-            return await Promise.reject(error);
-        }
-    }
 }
 
 module.exports = UserController;

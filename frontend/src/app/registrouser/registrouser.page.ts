@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistrouserService } from '../services/registrouser.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registrouser',
@@ -8,7 +9,9 @@ import { RegistrouserService } from '../services/registrouser.service';
 })
 export class RegistrouserPage implements OnInit {
 
-  constructor(private service: RegistrouserService) { }
+  constructor(
+    public toastController: ToastController,
+    private service: RegistrouserService) { }
 
   public nombre: any;
   public apellidos: any;
@@ -22,8 +25,16 @@ export class RegistrouserPage implements OnInit {
 
   ngOnInit() {
   }
+  
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Registrado con exito!.',
+      duration: 2000
+    });
+    toast.present();
+  }
 
-  guardarRegistro() {
+  async guardarRegistro() {
     const data = {
       nombre: this.nombre,
       apellidos: this.apellidos,
@@ -35,9 +46,13 @@ export class RegistrouserPage implements OnInit {
       rol: this.rol,
       estado: this.estado
     }
-    this.service.setRegistroUser(data).subscribe(Response => {
-      console.log(Response);
-    })
 
+    await this.service.setRegistroUser(data).subscribe(Response => {
+      console.log(Response);
+      this.presentToast();
+    })
+   
+    console.log();
+    
   }
 }

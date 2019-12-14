@@ -15,10 +15,10 @@
         <br>
         <ion-input class="input" type="text" required name="direccion" placeholder="Dirección" maxLength="200" minLength="3"></ion-input>
         <br>
-        <ion-select name="horario " placeholder="Selecciona una opción ">
+        <ion-select name="horario " placeholder="Horario de Atención">
             <ion-select-option value="Lunes a Viernes">Lunes a Viernes</ion-select-option>
             <ion-select-option value="Lunes a Domingo Incluyendo Festivos">Lunes a Domingo Incluyendo Festivos</ion-select-option>
-            <ion-select-option value="Lunes a Domingo (No Festivos)">Lunes a Domingo (No Festivos)</ion-select-option>
+            <ion-select-option value="Lunes a Domingo (No Festivos)">Lunes a Domingo <br> (No Festivos)</ion-select-option>
             <ion-select-option value="Fines de Semana">Fines de Semana</ion-select-option>
         </ion-select>
         <br>
@@ -49,10 +49,14 @@
         <br>
         <ion-input class="input" type="text" required name="cupo_bicicletas" placeholder="Cupo Bicicletas" maxLength="3" minLength="1"></ion-input>
         <br>
-        <ion-button class="buttond" type="submit">Subir Documentos °°°</ion-button>
+        <ion-input class="input" type="email" required name="correo" placeholder="Correo" maxLength="150" minLength="5"></ion-input>
         <br>
-        <ion-button class="buttonf" type="submit">Foto °°°</ion-button>
-        <br><br>
+        <ion-input class="input" type="password" required name="clave" placeholder="Clave" maxLength="150" minLength="1"></ion-input>
+        <br>
+        <!-- <ion-button size="big" shape="round" expand="block" class="buttond" type="submit">Subir Documentos °°°</ion-button>
+        <br>
+        <ion-button size="big" shape="round" expand="block" (click)="loadCamera()" class="buttonf" type="submit">Foto °°°</ion-button>
+        <br><br> -->
         <ion-toolbar class="terminos">
             <ion-checkbox class="check"></ion-checkbox>
             <ion-label class="termcond">
