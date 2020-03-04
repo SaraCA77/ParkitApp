@@ -1,7 +1,0 @@
-language: node_js
-rvm:
- - 0.10.48
- - node_js
- script:
-  - make
- sudo: enabled
