@@ -4,3 +4,4 @@ rvm:
  - node_js
  script:
   - make
+ sudo: enabled
