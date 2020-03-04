@@ -1,0 +1,8 @@
+  
+idioma : nodo_js
+rvm :
+- 0.10.48
+- node_js
+ guión :
+  - hacer
+ sudo : habilitado
