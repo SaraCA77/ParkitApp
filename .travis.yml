@@ -1,4 +1,4 @@
 language: node_js
 rvm:
- - 13.9.0
+ - 0.10.48
  - node_js
