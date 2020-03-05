@@ -1,8 +1,8 @@
   
-idioma : nodo_js
+languaje : node_js
 rvm :
 - 0.10.48
 - node_js
- guión :
-  - hacer
- sudo : habilitado
+ script :
+  - make
+ sudo : enabled
